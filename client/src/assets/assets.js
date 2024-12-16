@@ -3,9 +3,8 @@ import logo from './logo.jpg';
 import background_contact from './background-contact.jpg';
 import background_home from './background-home.jpg';
 import background_menu from './background-menu.jpg';
-import cofeeBeans from './coffee-beans.png';
+import cofeeBeans from './coffee-beans.jpg';
 // import header_img from './header_img.png';
-// import search_icon from './search_icon.png';
 // import menu_1 from './menu_1.png';
 // import menu_2 from './menu_2.png';
 // import menu_3 from './menu_3.png';
@@ -21,14 +20,20 @@ import caramelLatte from './caramel_latte.jpg';
 import mochaClassic from './mocha_classic.jpg';
 import hazelnutMocha from './hazelnut_mocha.jpg';
 
+import basket_icon from './basket_icon.png';
+import search_icon from './search_icon.png';
+import location_icon from './location_icon.png' 
+import phone_icon from './phone_icon.png'
+import email_icon from './email_icon.png'
 // import add_icon_white from './add_icon_white.png';
 // import add_icon_green from './add_icon_green.png';
 // import remove_icon_red from './remove_icon_red.png';
 // import app_store from './app_store.png';
 // import play_store from './play_store.png';
-// import linkedin_icon from './linkedin_icon.png';
-// import facebook_icon from './facebook_icon.png';
-// import twitter_icon from './twitter_icon.png';
+import linkedin_icon from './linkedin_icon.png';
+import facebook_icon from './facebook_icon.png';
+import instagram_icon from './instagram_icon.png'
+import twitter_icon from './twitter_icon.png';
 // import cross_icon from './cross_icon.png';
 // import selector_icon from './selector_icon.png';
 // import profile_icon from './profile_icon.png';
@@ -42,6 +47,13 @@ export const assets = {
     background_home,
     background_menu,
     cofeeBeans,
+    basket_icon,
+    search_icon,
+    location_icon,
+    phone_icon,
+    email_icon,
+    facebook_icon,
+    instagram_icon,
     // coffee_icon,
     // header_img,
     // search_icon,
@@ -50,9 +62,9 @@ export const assets = {
     // remove_icon_red,
     // app_store,
     // play_store,
-    // linkedin_icon,
-    // facebook_icon,
-    // twitter_icon,
+    linkedin_icon,
+    facebook_icon,
+    twitter_icon,
     // cross_icon,
     // selector_icon,
     // profile_icon,

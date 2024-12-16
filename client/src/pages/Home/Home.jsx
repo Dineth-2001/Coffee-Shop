@@ -13,7 +13,7 @@ const Home = () => {
       
       <section className="intro">
         <h2>Our Specialties</h2>
-        <p>Whether you're in the mood for a smooth latte or a fresh pastry, we have something for every coffee lover.</p>
+        <p>Whether you're craving a bold espresso or a perfectly brewed cappuccino, we have something for every coffee lover.</p>
         <button className="explore-button">Explore Our Menu</button>
       </section>
     </div>

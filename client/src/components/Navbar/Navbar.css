@@ -1,7 +1,12 @@
 .navbar {
-  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar-left {
+  display: flex;
   align-items: center;
 }
 
@@ -14,8 +19,8 @@
 .navbar button {
   background: transparent;
   font-size: 16px;
-  color: #49557e;
-  border: 1px solid tomato;
+  color: #624323;
+  border: 3px solid rgb(77, 54, 13);
   padding: 10px 30px;
   border-radius: 50px;
   cursor: pointer;
@@ -33,6 +38,75 @@
 
 .navbar li {
   cursor: pointer;
+  font-size: 20px;
+}
+
+.navbar-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: rgb(136, 75, 64);
+  border-radius: 5px;
+  top: -8px;
+  right: -8px;
+}
+
+.logo {
+  width: 100px; 
+  height: auto; 
+}
+
+/* 
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar-menu li {
+  cursor: pointer;
+}
+
+.navbar-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-menu li.active a {
+  border-bottom: 2px solid white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }
 
 .navbar-search-icon {
@@ -44,12 +118,22 @@
   min-width: 10px;
   min-height: 10px;
   background-color: tomato;
-  border-radius: 5px;
+  border-radius: 50%;
   top: -8px;
   right: -8px;
 }
 
-.logo {
-   width: 100px; 
-  height: auto; 
+.sign-in-button {
+  background: transparent;
+  font-size: 16px;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
+
+.sign-in-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+} */
