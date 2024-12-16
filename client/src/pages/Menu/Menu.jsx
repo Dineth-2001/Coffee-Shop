@@ -6,6 +6,7 @@ import { assets } from '../../assets/assets';
 const Menu = () => {
   return (
     <div className="menu-page">
+      <img src={assets.cofeeBeans} alt="" className="coffee-beans" />
       <div className="menu-list">
         {menu_list.map((item, index) => {
           return (
