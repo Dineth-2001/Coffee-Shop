@@ -1,5 +1,9 @@
 // import coffee_icon from './coffee_icon.png';
 import logo from './logo.jpg';
+import background_contact from './background-contact.jpg';
+import background_home from './background-home.jpg';
+import background_menu from './background-menu.jpg';
+import cofeeBeans from './coffee-beans.png';
 // import header_img from './header_img.png';
 // import search_icon from './search_icon.png';
 // import menu_1 from './menu_1.png';
@@ -34,6 +38,10 @@ import hazelnutMocha from './hazelnut_mocha.jpg';
 
 export const assets = {
     logo,
+    background_contact,
+    background_home,
+    background_menu,
+    cofeeBeans,
     // coffee_icon,
     // header_img,
     // search_icon,
