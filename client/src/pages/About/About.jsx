@@ -7,7 +7,7 @@ const About = () => {
     <div className="about-container">
       <img src={assets.background_about} alt="" className="background-about" />
       <h1 className="about-header">Welcome to Our Coffee Haven</h1>
-      <p className="about-text">At Steamy Sipps, every cup tells a story. A story brewed with passion, warmth, and dedication. Join us on a journey where each sip brings you closer to the heart of the coffee world.</p>
+      <p className="about-text">At Steamy Sips, every cup tells a story. A story brewed with passion, warmth, and dedication. Join us on a journey where each sip brings you closer to the heart of the coffee world.</p>
 
       <section className="about-history">
         <h2 className="about-subheader">Our Story</h2>

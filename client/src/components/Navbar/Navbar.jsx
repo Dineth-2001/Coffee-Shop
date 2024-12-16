@@ -10,6 +10,7 @@ const Navbar = () => {
     <div className='navbar'>
       <div className="navbar-left">
         <img src={assets.logo} className='logo' alt="Logo" />
+        <div className="logo-text">Steamy Sips</div>
       </div>
       <ul className="navbar-menu">
         <li onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>
@@ -18,12 +19,12 @@ const Navbar = () => {
         <li onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>
           <Link to="/menu">Menu</Link>
         </li>
-        <li onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>
-          <Link to="/contact">Contact Us</Link>
-        </li>
         <li onClick={() => setMenu("about")} className={menu === "about" ? "active" : ""}>
           <Link to="/about">About</Link>
         </li>
+        <li onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>
+          <Link to="/contact">Contact Us</Link>
+        </li>       
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} className="navbar-icon search-icon" alt="Search" />
