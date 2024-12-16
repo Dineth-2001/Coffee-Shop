@@ -26,7 +26,7 @@ const ContactUs = () => {
           </p>
           <p>
             <img className="contact-icon" src={assets.email_icon} alt=""/>
-            <a href="mailto:support@steamysipps.com">support@coffeeshop.com</a>
+            <a href="mailto:support@steamysipps.com">support@steamysipps.com</a>
           </p>
         </div>
 

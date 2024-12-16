@@ -17,7 +17,7 @@
 }
 
 .navbar button {
-  background: transparent;
+  background:  #f9eae1;
   font-size: 16px;
   color: #624323;
   border: 3px solid rgb(77, 54, 13);
@@ -28,12 +28,12 @@
 }
 
 .navbar button:hover {
-  background: #fff4f2;
+  background: #e29671;
 }
 
 .navbar .active {
   padding-bottom: 2px;
-  border-bottom: 2px solid #49557e;
+  border-bottom: 2px solid #000000;
 }
 
 .navbar li {
@@ -43,7 +43,7 @@
 
 .navbar-icon {
   width: 30px;
-  height: 30px;
+  height: px;
   cursor: pointer;
 }
 

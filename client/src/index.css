@@ -33,8 +33,9 @@ a {
   display: flex;
   list-style: none;
   gap: 20px;
-  color: #49557e;
+  color: #000000;
   font-size: 18px;
+  font-weight: 500;
 }
 
 @keyframes fadeIn {
