@@ -52,103 +52,19 @@
   position: relative;
 }
 
-.navbar-search-icon .dot {
-  position: absolute;
-  min-width: 10px;
-  min-height: 10px;
-  background-color: rgb(136, 75, 64);
-  border-radius: 5px;
-  top: -8px;
-  right: -8px;
-}
-
 .logo {
   width: 100px; 
   height: auto; 
 }
 
 .logo-text {
-  font-size: 1.5rem; /* Slightly larger for better visibility */
-  color: #624323; /* Warm coffee brown to match the theme */
-  font-weight: bold; /* Adds emphasis to the logo text */
-  font-family: 'Georgia', serif; /* Classic serif font for a touch of elegance */
+  font-size: 1.5rem; 
+  color: #624323; 
+  font-weight: bold; 
+  font-family: 'Georgia', serif; 
   margin-top: 5px;
-  text-transform: uppercase; /* Makes the text appear more prominent */
-  letter-spacing: 2px; /* Adds spacing for a clean, modern look */
-  -webkit-text-stroke: 1px #463f3f; /* Black border for clear contrast */
-  text-shadow: 1px 1px 2px rgba(97, 50, 50, 0.2); /* Adds a subtle shadow for depth */
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  -webkit-text-stroke: 1px #463f3f; 
+  text-shadow: 1px 1px 2px rgba(97, 50, 50, 0.2); 
 }
-
-
-
-/* 
-.navbar-left {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
-.navbar-menu li {
-  cursor: pointer;
-}
-
-.navbar-menu li a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.navbar-menu li.active a {
-  border-bottom: 2px solid white;
-}
-
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.navbar-search-icon {
-  position: relative;
-}
-
-.navbar-search-icon .dot {
-  position: absolute;
-  min-width: 10px;
-  min-height: 10px;
-  background-color: tomato;
-  border-radius: 50%;
-  top: -8px;
-  right: -8px;
-}
-
-.sign-in-button {
-  background: transparent;
-  font-size: 16px;
-  color: white;
-  border: 1px solid white;
-  padding: 10px 20px;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.sign-in-button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-} */

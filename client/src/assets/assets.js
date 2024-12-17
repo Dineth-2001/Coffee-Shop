@@ -75,29 +75,6 @@ export const assets = {
     // parcel_icon
 };
 
-// export const menu_list = [
-//     {
-//         menu_name: "Espresso",
-//         menu_image: menu_1
-//     },
-//     {
-//         menu_name: "Cappuccino",
-//         menu_image: menu_2
-//     },
-//     {
-//         menu_name: "Latte",
-//         menu_image: menu_3
-//     },
-//     {
-//         menu_name: "Mocha",
-//         menu_image: menu_4
-//     },
-//     {
-//         menu_name: "Tea & Snacks",
-//         menu_image: menu_5
-//     }
-// ];
-
 export const menu_list = [
     {
         _id: "1",
