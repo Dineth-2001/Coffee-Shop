@@ -7,6 +7,7 @@ import Contact from './pages/Contact/Contact';
 import Menu from './pages/Menu/Menu';
 import Cart from './pages/Cart/Cart';
 import './App.css';
+import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/place-order" element={<PlaceOrder />} />
       </Routes>
     </div>
   );

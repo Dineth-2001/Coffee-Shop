@@ -1,6 +1,8 @@
 import React from "react";
 import "./Cart.css";
 import useCart from "../../hooks/useCart";
+import { assets } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -8,6 +10,12 @@ const Cart = () => {
     clearCart,           // To clear the entire cart
     setCartItems         // To set cart items for custom logic
   } = useCart();
+
+  const navigate = useNavigate();
+
+  const handlePaymentClick = () => {
+    navigate('/place-order');
+  };
 
   // Calculate quantity
   const consolidatedCart = cartItems.reduce((acc, item) => {
@@ -43,6 +51,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container fade-in">
+      <img src={assets.background_cart} alt="" className="background-cart" />
       <h2 className="cart-header">Your Cozy Cart</h2>
       {consolidatedCart.length === 0 ? (
         <p>Looks like you haven't added anything to your cart yet. Go ahead, add some tasty treats!</p>
@@ -66,32 +75,23 @@ const Cart = () => {
               <span>{item.quantity}</span>
               <span>${(item.price * item.quantity).toFixed(2)}</span>
               <span className="action-buttons">
-                <button
-                  className="remove-button"
-                  onClick={() => removeOneItem(item._id)}
-                >
-                  ➖ Remove One
-                </button>
-                <button
-                  className="remove-button remove-all"
-                  onClick={() => removeAllItems(item._id)}
-                >
-                  ❌ Remove All
-                </button>
+                <button className="remove-button" onClick={() => removeOneItem(item._id)}>➖ Remove One</button>
+                <button className="remove-button remove-all" onClick={() => removeAllItems(item._id)}>❌ Remove All</button>
               </span>
             </div>            
             ))}
           </div>
           <div className="clear-button-container">
-            <button className="clear-button" onClick={clearCart}>
-                Clear Cart
-            </button>
+            <button className="clear-button" onClick={clearCart}>Clear Cart</button>
             <div className="cart-total">
-                <h3>Grand Total: ${grandTotal.toFixed(2)}</h3>
+                <h3>Total: ${grandTotal.toFixed(2)}</h3>
             </div>
           </div>
         </div>
       )}
+      <div className="payment">
+        <button className="payment-button" onClick={handlePaymentClick}>Place Your Order</button>
+      </div>
     </div>
   );
 };

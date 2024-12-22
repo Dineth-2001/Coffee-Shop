@@ -4,6 +4,7 @@ import background_contact from './background-contact.jpg';
 import background_home from './background-home.jpg';
 import background_menu from './background-menu.jpg';
 import background_about from './background-about.jpg'
+import background_cart from './background-cart.jpg'
 import cofeeBeans from './coffee-beans.jpg';
 // import header_img from './header_img.png';
 // import menu_1 from './menu_1.png';
@@ -48,6 +49,7 @@ export const assets = {
     background_home,
     background_menu,
     background_about,
+    background_cart,
     cofeeBeans,
     basket_icon,
     search_icon,
