@@ -89,9 +89,7 @@ const Cart = () => {
           </div>
         </div>
       )}
-      <div className="payment">
-        <button className="payment-button" onClick={handlePaymentClick}>Place Your Order</button>
-      </div>
+      <button className="place-order-button" onClick={handlePaymentClick}>Place Your Order</button>
     </div>
   );
 };

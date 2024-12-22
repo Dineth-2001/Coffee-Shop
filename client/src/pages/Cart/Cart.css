@@ -175,3 +175,21 @@
     padding: 10px 0;
     width: 100%;
 }
+
+.place-order-button {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.place-order-button {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
