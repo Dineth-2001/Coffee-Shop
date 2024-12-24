@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, useNavigate, useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
 import useCart from '../../hooks/useCart';
@@ -32,7 +32,7 @@ const Navbar = ({setShowLogin}) => {
   return (
     <div className='navbar'>
       <div className="navbar-left">
-        <img src={assets.logo} className='logo' alt="Logo" />
+        <Link to='/'><img src={assets.logo} className='logo' alt="Logo" /></Link>
         <div className="logo-text">Steamy Sips</div>
       </div>
       <ul className="navbar-menu">

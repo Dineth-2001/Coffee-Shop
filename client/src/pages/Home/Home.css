@@ -72,7 +72,7 @@ a {
 
 .intro p {
   font-size: 1.1rem;
-  color: #666;
+  color: #212020;
   margin: 20px 0;
 }
 
@@ -85,6 +85,7 @@ a {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-bottom: 20px;
 }
 
 .explore-button:hover {

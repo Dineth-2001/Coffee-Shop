@@ -22,7 +22,7 @@ const ContactUs = () => {
           </p>
           <p>
             <img className="contact-icon" src={assets.phone_icon} alt=""/>
-            +94 37 123 4567
+            +1 234 567 890
           </p>
           <p>
             <img className="contact-icon" src={assets.email_icon} alt=""/>

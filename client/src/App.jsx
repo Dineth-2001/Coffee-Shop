@@ -9,6 +9,7 @@ import Cart from './pages/Cart/Cart';
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Login from "./components/Login/Login";
 import './App.css';
+import Footer from "./components/Footer/Footer";
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} /> 
       </Routes>
     </div>
+    <Footer/>
   </>
   );
 }
