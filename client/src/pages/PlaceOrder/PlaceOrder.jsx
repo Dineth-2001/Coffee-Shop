@@ -1,6 +1,7 @@
 import React from 'react'
 import useCart from '../../hooks/useCart'
 import './PlaceOrder.css'
+import { assets } from '../../assets/assets'
 
 const PlaceOrder = () => {
   const {cartItems} =useCart();
@@ -24,7 +25,7 @@ const PlaceOrder = () => {
 
   return (
     <form className="place-order">
-
+        <img src={assets.background_cart} alt="" className="background-place-order" />
         <div className="place-order-left">
             <p className='title'>Your Delivery Details</p>
             <div className="multi-field">

@@ -20,9 +20,9 @@
     object-fit: cover;
     z-index: -1;
     background-attachment: fixed;
-    opacity: 0.6;
+    opacity: 0.55;
 }
-  
+
 .cart-table-header,
 .cart-table-row {
     display: grid;
@@ -192,4 +192,11 @@
     cursor: pointer;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.empty-cart {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #1f1511;
+    margin-top: 20px;
 }

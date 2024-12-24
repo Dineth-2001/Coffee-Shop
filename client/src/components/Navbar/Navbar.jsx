@@ -4,7 +4,7 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 import useCart from '../../hooks/useCart';
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState("home");
   const navigate = useNavigate();
   const location = useLocation();
@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className="navbar-search-icon">
           <img src={assets.basket_icon} className={`navbar-icon basket-icon ${menu === "cart" ? "active" : ""}`} alt="Basket" onClick={handleBasketClick} />
         </div>
-        <button>Sign In</button>
+        <button onClick={()=>setShowLogin(true)}>Sign In</button>
       </div>
     </div>
   );

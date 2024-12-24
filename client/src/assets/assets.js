@@ -4,7 +4,7 @@ import background_contact from './background-contact.jpg';
 import background_home from './background-home.jpg';
 import background_menu from './background-menu.jpg';
 import background_about from './background-about.jpg'
-import background_cart from './background-cart.jpg'
+import background_cart from './background-cart.png'
 import cofeeBeans from './coffee-beans.jpg';
 // import header_img from './header_img.png';
 // import menu_1 from './menu_1.png';
@@ -36,7 +36,7 @@ import linkedin_icon from './linkedin_icon.png';
 import facebook_icon from './facebook_icon.png';
 import instagram_icon from './instagram_icon.png'
 import twitter_icon from './twitter_icon.png';
-// import cross_icon from './cross_icon.png';
+import cross_icon from './cross_icon.png';
 // import selector_icon from './selector_icon.png';
 // import profile_icon from './profile_icon.png';
 // import bag_icon from './bag_icon.png';
@@ -69,7 +69,7 @@ export const assets = {
     linkedin_icon,
     facebook_icon,
     twitter_icon,
-    // cross_icon,
+    cross_icon,
     // selector_icon,
     // profile_icon,
     // logout_icon,

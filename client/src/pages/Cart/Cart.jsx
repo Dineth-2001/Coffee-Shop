@@ -54,7 +54,7 @@ const Cart = () => {
       <img src={assets.background_cart} alt="" className="background-cart" />
       <h2 className="cart-header">Your Cozy Cart</h2>
       {consolidatedCart.length === 0 ? (
-        <p>Looks like you haven't added anything to your cart yet. Go ahead, add some tasty treats!</p>
+        <p className="empty-cart">Looks like you haven't added anything to your cart yet. Go ahead, add some tasty treats!</p>
       ) : (
         <div>
           <div className="cart-table">
@@ -89,7 +89,9 @@ const Cart = () => {
           </div>
         </div>
       )}
-      <button className="place-order-button" onClick={handlePaymentClick}>Place Your Order</button>
+      {consolidatedCart.length > 0 && (
+        <button className="place-order-button" onClick={handlePaymentClick}>Place Your Order</button>
+      )}
     </div>
   );
 };
