@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate, useLocation, Link } from 'react-router-dom';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import useCart from '../../hooks/useCart';
+// import useCart from '../../hooks/useCart';
 
 const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState("home");
   const navigate = useNavigate();
   const location = useLocation();
-  const { cartItems } = useCart();
+  // const { cartItems } = useCart();
 
   useEffect(() => {
     const path = location.pathname;

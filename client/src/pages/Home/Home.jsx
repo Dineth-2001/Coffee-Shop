@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <img src={assets.background_home} alt="" className="background" />
+      <img src={assets.background_home} alt="" className="background-home" />
       <header className="header">
         <h1 className="header-title">Welcome to Steamy Sips!</h1>
         <p className="header-subtitle">Discover our delicious coffee, brewed just for you.</p>
