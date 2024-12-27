@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS item;
 CREATE TABLE item (
   item_id INT AUTO_INCREMENT,
   name VARCHAR(50),
-  price FLOAT,
+  price DECIMAL(10,2),
   category VARCHAR(50),
   description VARCHAR(255),
   PRIMARY KEY (item_id)
@@ -27,8 +27,8 @@ CREATE TABLE item (
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart (
   cart_id INT AUTO_INCREMENT,
-  user_id INT,  
-  total FLOAT DEFAULT 0,
+  user_id INT NOT NULL,  
+  total DECIMAL(10,2) DEFAULT 0.00,
   PRIMARY KEY (cart_id),
   FOREIGN KEY (user_id) REFERENCES user(user_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
@@ -39,7 +39,7 @@ CREATE TABLE cart_items (
   cart_id INT NOT NULL,
   item_id INT NOT NULL,
   quantity INT NOT NULL,
-  sub_total FLOAT NOT NULL,
+  sub_total DECIMAL(10,2) NOT NULL,
   PRIMARY KEY (cart_id, item_id),
   FOREIGN KEY (cart_id) REFERENCES cart(cart_id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (item_id) REFERENCES item(item_id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -50,13 +50,13 @@ DROP TABLE IF EXISTS delivery;
 CREATE TABLE delivery (
   delivery_id INT AUTO_INCREMENT,
   cart_id INT NOT NULL,
-  user_id INT,
+  user_id INT NOT NULL,
   street VARCHAR(100),
   city VARCHAR(100),
   state VARCHAR(100),
   zip INT,
   phone_num BIGINT,
-  tot_with_delivery FLOAT,
+  tot_with_delivery DECIMAL(10,2),
   PRIMARY KEY (delivery_id),
   FOREIGN KEY (cart_id) REFERENCES cart(cart_id) ON UPDATE CASCADE ON DELETE CASCADE,
   FOREIGN KEY (user_id) references user(user_id) ON UPDATE CASCADE ON DELETE CASCADE
