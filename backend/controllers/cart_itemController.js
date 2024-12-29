@@ -41,9 +41,9 @@ const addCartItem = async (req, res) => {
             sub_total: req.body.sub_total,
         });
         await cart_item.save();
-        res.status(201).send(cart_item);
+        res.json({success: true, message: 'Cart item added successfully'})
     } catch (error) {
-        res.status(500).send(error);
+        res.json({success: false, message: 'Failed to add cart item'})
     }
 };
 
