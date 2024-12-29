@@ -2,6 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import sequelize from './config/db.js';
 import itemRouter from './routes/itemRoute.js';
+import userRouter from './routes/userRoute.js';
+import deliveryRouter from './routes/deliveryRoute.js';
+import cart_itemRouter from './routes/cart_itemRoute.js';
+import cartRouter from './routes/cartRoute.js';
 
 
 // App Config
@@ -30,6 +34,10 @@ sequelize.authenticate()
 
 // API Endpoints
 app.use('/api/item', itemRouter);
+app.use('/api/user', userRouter);
+app.use('/api/delivery', deliveryRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/cart_item', cart_itemRouter);
 
 
 
