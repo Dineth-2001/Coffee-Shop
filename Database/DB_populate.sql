@@ -14,17 +14,16 @@ INSERT INTO user (user_name, password, email) VALUES
 ('Jake', 'jake123', 'jake@example.com');
 
 -- Populate Item Table
-INSERT INTO item (name, price, category, description)
+INSERT INTO item (name, price, image, category, description)
 VALUES
-  ('Classic Espresso', 5, 'Espresso', 'A rich, bold shot of pure espresso for a true coffee lover'),
-  ('Double Espresso', 7, 'Espresso', 'A double shot of robust espresso for an extra kick'),
-  ('Cappuccino Classic', 6, 'Cappuccino', 'Creamy, foamy milk combined with a shot of espresso'),
-  ('Vanilla Cappuccino', 7, 'Cappuccino', 'A deliciously sweet vanilla twist on the classic cappuccino'),
-  ('Latte Classic', 6, 'Latte', 'Smooth and creamy steamed milk with a shot of espresso'),
-  ('Caramel Latte', 8, 'Latte', 'Rich caramel syrup blended into a smooth latte'),
-  ('Mocha Classic', 7, 'Mocha', 'A luscious blend of chocolate and espresso topped with whipped cream'),
-  ('Hazelnut Mocha', 8, 'Mocha', 'Hazelnut flavoring enhances the richness of a classic mocha');
-
+  ('Classic Espresso', 5, 'D:\Projects\Coffee-Shop\client\src\assets\classic_espresso.jpg', 'Espresso', 'A rich, bold shot of pure espresso for a true coffee lover'),
+  ('Double Espresso', 7, 'D:\Projects\Coffee-Shop\client\src\assets\double_espresso.jpg', 'Espresso', 'A double shot of robust espresso for an extra kick'),
+  ('Cappuccino Classic', 6, 'D:\Projects\Coffee-Shop\client\src\assets\cappuccino_classic.jpg', 'Cappuccino', 'Creamy, foamy milk combined with a shot of espresso'),
+  ('Vanilla Cappuccino', 7, 'D:\Projects\Coffee-Shop\client\src\assets\vanila_cappuccino.jpg', 'Cappuccino', 'A deliciously sweet vanilla twist on the classic cappuccino'),
+  ('Latte Classic', 6, 'D:\Projects\Coffee-Shop\client\src\assets\latte_classic.jpg', 'Latte', 'Smooth and creamy steamed milk with a shot of espresso'),
+  ('Caramel Latte', 8, 'D:\Projects\Coffee-Shop\client\src\assets\caramel_latte.jpg', 'Latte', 'Rich caramel syrup blended into a smooth latte'),
+  ('Mocha Classic', 7, 'D:\Projects\Coffee-Shop\client\src\assets\mocha_classic.jpg', 'Mocha', 'A luscious blend of chocolate and espresso topped with whipped cream'),
+  ('Hazelnut Mocha', 8, 'D:\Projects\Coffee-Shop\client\src\assets\hazelnut_mocha.jpg', 'Mocha', 'Hazelnut flavoring enhances the richness of a classic mocha');
 
 -- Populate Cart Table
 INSERT INTO cart (user_id, total) VALUES
@@ -40,7 +39,7 @@ INSERT INTO cart (user_id, total) VALUES
 (10, 38.00);
 
 -- Populate Cart_Items Table
-INSERT INTO cart_items (cart_id, item_id, quantity, sub_total) VALUES
+INSERT INTO cart_item (cart_id, item_id, quantity, sub_total) VALUES
 (1, 1, 2, 10.00),
 (1, 2, 1, 7.00),
 (2, 3, 3, 18.00),

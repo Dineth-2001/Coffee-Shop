@@ -49,7 +49,7 @@ BEGIN
         SET sub_total = sub_total * quantity;
 
         -- Add item to cart_items table
-        INSERT INTO cart_items (cart_id, item_id, quantity, sub_total)
+        INSERT INTO cart_item (cart_id, item_id, quantity, sub_total)
         VALUES (cart_id, p_item_id, quantity, sub_total);
 
         -- Add the item's subtotal to the cart's total
@@ -109,7 +109,7 @@ DELIMITER ;
 --     INSERT INTO cart (user_id) VALUES (p_user_id);
 --     SET cart_id = LAST_INSERT_ID();
 
---     -- Count the number of items (assuming item_ids and quantities have the same length)
+--     -- Count the number of items 
 --     SET num_items = LENGTH(p_item_ids) - LENGTH(REPLACE(p_item_ids, ',', '')) + 1;
 
 --     -- Loop through each item_id and quantity

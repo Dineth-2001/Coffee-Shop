@@ -1,0 +1,25 @@
+Procedures
+add_user: Adds a new user to the user table.
+add_item: Adds a new item to the item table.
+create_cart: Creates a new cart for a user.
+add_item_to_cart: Adds an item to an existing cart and updates the total cost.
+remove_item_from_cart: Removes an item from the cart and adjusts the total.
+checkout_cart: Finalizes the cart, calculates the total with delivery charges, and creates a delivery entry.
+update_delivery_status: Updates the delivery status for a given delivery record.
+
+Functions
+calculate_item_subtotal: Computes the subtotal for a given item and quantity.
+get_cart_total: Returns the total cost of all items in a cart.
+validate_email_format: Validates the format of a user's email before adding to the user table.
+apply_discount: Applies a discount to the cart total, if applicable (e.g., for promotions).
+
+Triggers
+update_cart_total: Automatically updates the total in the cart table whenever an entry in the cart_items table is added, updated, or deleted.
+prevent_negative_quantity: Ensures that the quantity in the cart_items table cannot be negative.
+validate_price_on_insert: Checks that the price in the item table is positive when a new item is added.
+log_user_creation: Logs the creation of a new user in an audit table for tracking purposes.
+log_item_deletion: Logs the deletion of items from the item table into a separate log table to maintain a history of changes.
+
+Optional
+Audit Log Table: Create a separate audit_log table to log changes (e.g., user creations, item deletions, etc.) for accountability.
+Scheduled Event: Implement a scheduled event to remove carts with no items after a certain period of inactivity.
