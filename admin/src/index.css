@@ -29,20 +29,4 @@ a {
   width: 150px;
 }
 
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 500;
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}

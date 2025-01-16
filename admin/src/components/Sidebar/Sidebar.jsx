@@ -6,10 +6,10 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
       <div className="sidebar-options">
-        <NavLink to='./menu' className="sidebar-option">
+        <NavLink to='/menu' className="sidebar-option">
           <p>Menu</p>
         </NavLink>
-        <NavLink to='./deliveries' className="sidebar-option">
+        <NavLink to='/deliveries' className="sidebar-option">
           <p>Deliveries</p>
         </NavLink>
       </div>

@@ -36,7 +36,7 @@ const Navbar = ({setShowLogin}) => {
         <div className="logo-text">Steamy Sips</div>
       </div>
       <ul className="navbar-menu">
-      <li className={menu === "home" ? "active" : ""}>
+        <li className={menu === "home" ? "active" : ""}>
           <NavLink to="/">Home</NavLink>
         </li>
         <li className={menu === "menu" ? "active" : ""}>
