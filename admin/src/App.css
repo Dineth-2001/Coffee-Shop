@@ -1,21 +1,21 @@
-/* Adjusting layout for sidebar and main content */
 .app-content {
-    display: flex;
-  }
+  display: flex;
+  align-items: flex-start; 
+}
   
-  .sidebar {
-    width: 250px; /* Set the width of the sidebar */
+.sidebar {
+    width: 250px; 
     position: fixed;
-    top: 60px; /* Adjust according to your navbar height */
+    top: 60px; 
     bottom: 0;
     left: 0;
     background-color: #f4f4f4;
-    padding-top: 20px; /* Space for the top of the sidebar */
-  }
+    padding-top: 20px; 
+}
   
-  .main-content {
-    margin-left: 250px; /* Space to avoid overlap with the sidebar */
+.main-content {
+    margin-left: 250px; 
     padding: 20px;
     flex-grow: 1;
-  }
+}
   

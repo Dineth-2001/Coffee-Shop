@@ -6,6 +6,8 @@ import userRouter from './routes/userRoute.js';
 import deliveryRouter from './routes/deliveryRoute.js';
 import cart_itemRouter from './routes/cart_itemRoute.js';
 import cartRouter from './routes/cartRoute.js';
+import employeeRouter from './routes/employeeRoute.js';
+import 'dotenv/config';
 
 
 // App Config
@@ -38,7 +40,8 @@ app.use('/api/user', userRouter);
 app.use('/api/delivery', deliveryRouter);
 app.use('/api/cart', cartRouter);
 app.use('/api/cart_item', cart_itemRouter);
-
+app.use('/api/employee', employeeRouter);
+app.use('/images', express.static('uploads'));
 
 
 

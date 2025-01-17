@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Menu.css';
 import { assets } from '../../assets/assets';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-const Menu = () => {
-  const url = 'http://localhost:4000';
+const Menu = ({url}) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -28,6 +28,7 @@ const Menu = () => {
       setMenuItems(response.data);
     } catch (error) {
       console.error("Error fetching menu items:", error);
+      toast.error("Error fetching menu items");
     }
   };
 
@@ -56,6 +57,7 @@ const Menu = () => {
         });
         setImage(false);
         fetchMenuItems(); // Refresh menu list after adding an item
+       toast.success(response.data.message);
       }
     } catch (error) {
       console.error("Error adding item:", error);
@@ -68,6 +70,7 @@ const Menu = () => {
       const response = await axios.delete(`${url}/api/item/remove/${itemId}`);
       if (response.data.success) {
         fetchMenuItems(); // Refresh menu list after removing an item
+        toast.success(response.data.message);
       }
     } catch (error) {
       console.error("Error removing item:", error);
@@ -119,7 +122,7 @@ const Menu = () => {
           ) : (
             menuItems.map(item => (
               <div key={item.item_id} className="menu-item">
-                <img src={item.image_url} alt={item.name} />
+                <img src={`${url}/images/`+item.image} alt={item.name} />
                 <div>
                   <h3>{item.name}</h3>
                   <p>{item.description}</p>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Deliveries.css';
 
-const Deliveries = () => {
+const Deliveries = ({url}) => {
   const [deliveries, setDeliveries] = useState([]);
 
   useEffect(() => {

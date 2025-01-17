@@ -73,3 +73,7 @@ INSERT INTO delivery (cart_id, user_id, street, city, state, zip, phone_num, tot
 (8, 8, '505 Walnut St', 'Fawcett City', 'OR', 78912, 6543210987, 41.00),
 (9, 9, '606 Cherry St', 'Keystone City', 'CO', 89012, 5678901234, 23.00),
 (10, 10, '707 Aspen St', 'Hub City', 'AZ', 90123, 8901234567, 40.00);
+
+INSERT INTO employee (emp_name, password, email) VALUES
+('Employee1', 'employee1', 'employee1@example.com'),
+('Employee2', 'employee2', 'employee2@example.com');
