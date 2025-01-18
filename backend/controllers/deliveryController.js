@@ -42,4 +42,32 @@ const getDeliveries = async (req, res) => {
     }
 };
 
-export { addDelivery, getDeliveries };
+// Update the status of the delivery
+const updateStatus = async (req, res) => {
+    const { delivery_id } = req.body;
+    const { status } = req.body;
+    
+    console.log(delivery_id, status);
+
+    if (!delivery_id || !status) {
+        return res.status(400).json({ success: false, message: 'Delivery ID and status are required' });
+    }
+
+    try {
+        const delivery = await deliveryModel.findOne({ where: { delivery_id } });
+
+        if (!delivery) {
+            return res.status(404).json({ success: false, message: 'Delivery not found' });
+        }
+
+        delivery.status = status;
+        await delivery.save();
+
+        res.json({ success: true, message: 'Delivery status updated successfully' });
+    } catch (error) {
+        console.log(error);
+        res.json({ success: false, message: 'Failed to update delivery status' });
+    }
+};
+
+export { addDelivery, getDeliveries, updateStatus };

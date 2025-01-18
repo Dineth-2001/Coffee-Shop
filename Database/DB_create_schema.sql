@@ -58,6 +58,7 @@ CREATE TABLE delivery (
   zip INT NOT NULL,
   phone_num BIGINT NOT NULL,
   tot_with_delivery DECIMAL(10,2) NOT NULL,
+  status ENUM("Completed", "Pending", "Cancelled"),
   PRIMARY KEY (delivery_id),
   FOREIGN KEY (cart_id) REFERENCES cart(cart_id) ON UPDATE CASCADE,
   FOREIGN KEY (user_id) references user(user_id) ON UPDATE CASCADE

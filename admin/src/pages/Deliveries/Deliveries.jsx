@@ -4,6 +4,8 @@ import './Deliveries.css';
 const Deliveries = ({url}) => {
   const [deliveries, setDeliveries] = useState([]);
 
+  
+
   useEffect(() => {
     fetch('http://localhost:4000/api/delivery/get')
       .then(response => {
@@ -28,6 +30,8 @@ const Deliveries = ({url}) => {
                 <p><strong>Delivery ID:</strong> {delivery.delivery_id}</p>
                 <p><strong>Address:</strong> {delivery.street}, {delivery.city}, {delivery.state}, {delivery.zip}</p>
                 <p><strong>Contact:</strong> {delivery.phone_num}</p>
+                <p>Status: {delivery.status}</p> 
+                <button className='changeStatus'>Change</button>
               </div>
             </li>
           ))}

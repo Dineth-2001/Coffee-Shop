@@ -33,6 +33,9 @@ const delivery = sequelize.define('delivery', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
   },
+  status: {
+    type: DataTypes.ENUM('Completed', 'Pending')
+  },
   cart_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
