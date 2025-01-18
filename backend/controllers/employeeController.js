@@ -44,7 +44,26 @@ const getEmployeeById = async (req, res) => {
 // };
 
 const loginEmployee = async (req, res) => {
+  const {email, password} = req.body;
+  try {
+    const employee = await employeeModel.findOne({ where: { email } });
+    
+    if (!employee) {
+      return res.status(404).json({ success: false, message: 'User not found' });
+    }
 
+    const isMatch = await bcrypt.compare(password, employee.password);
+
+    if (!isMatch) {
+      return res.status(400).json({ success: false, message: 'Invalid credentials' });
+    }
+
+    const token = createToken(employee.emp_id);
+    res.json({success: true, token});
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error.message });
+  }
 }
 
 const createToken = (id) => {
