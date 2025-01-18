@@ -63,6 +63,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Menu from './pages/Menu/Menu';
 import Deliveries from './pages/Deliveries/Deliveries';
 import Login from './pages/Login/Login';
+import Carts from './pages/Customers/Carts';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -111,6 +112,11 @@ function App() {
           <Route path="/deliveries" element={
             <ProtectedRoute isAuthenticated={isAuthenticated}>
               <Deliveries url={url} />
+            </ProtectedRoute>
+          } />
+          <Route path="/carts" element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <Carts url={url} />
             </ProtectedRoute>
           } />
           <Route path="*" element={<Navigate to={isAuthenticated ? "/menu" : "/login"} />} />

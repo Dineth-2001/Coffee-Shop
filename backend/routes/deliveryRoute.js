@@ -5,6 +5,6 @@ const deliveryRouter = express.Router();
 
 deliveryRouter.post('/add', addDelivery);
 deliveryRouter.get('/get', getDeliveries);
-deliveryRouter.put('/update', updateStatus)
+deliveryRouter.put('/update/:delivery_id', updateStatus)
 
 export default deliveryRouter;

@@ -76,6 +76,9 @@ const Sidebar = ({ isAuthenticated, setIsAuthenticated }) => {
         <NavLink to='/deliveries' className="sidebar-option">
           <p>Deliveries</p>
         </NavLink>
+        <NavLink to='/carts' className="sidebar-option">
+          <p>Carts</p>
+        </NavLink>
 
         <div className="sidebar-login">
           {isAuthenticated ? (

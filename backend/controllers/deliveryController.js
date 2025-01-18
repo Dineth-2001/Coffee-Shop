@@ -44,7 +44,7 @@ const getDeliveries = async (req, res) => {
 
 // Update the status of the delivery
 const updateStatus = async (req, res) => {
-    const { delivery_id } = req.body;
+    const delivery_id = req.params.delivery_id;
     const { status } = req.body;
     
     console.log(delivery_id, status);

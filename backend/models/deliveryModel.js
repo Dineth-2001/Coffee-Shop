@@ -34,7 +34,7 @@ const delivery = sequelize.define('delivery', {
     allowNull: false,
   },
   status: {
-    type: DataTypes.ENUM('Completed', 'Pending')
+    type: DataTypes.ENUM('Completed', 'Pending', 'Cancelled')
   },
   cart_id: {
     type: DataTypes.INTEGER,
