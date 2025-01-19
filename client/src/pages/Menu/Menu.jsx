@@ -1,26 +1,30 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Menu.css';
 import { menu_list } from '../../assets/assets';
 import { assets } from '../../assets/assets';
 import useCart from '../../hooks/useCart';
 import Modal from '../../components/Modal/Modal';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Menu = () => {
+  const { isAuthenticated } = useContext(AuthContext);
   const { addItemToCart } = useCart();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState('');
   const [quantities, setQuantities] = useState({}); // Track quantities for each item
 
   const handleAddToCart = (item, quantity) => {
-    addItemToCart(item, quantity);
-    setModalContent(
-      <>
+    if (isAuthenticated) {
+      addItemToCart(item, quantity);
+      setModalContent(
         <p>
           <span className="modal-highlight">{quantity} {item.name}(s)</span> have been added to your cart 🎉
+          <p>Enjoy exploring more delicious brews!</p>
         </p>
-        <p>Enjoy exploring more delicious brews!</p>
-      </>
-    );
+      );
+    } else {
+      setModalContent(<p>Please log in to add items to your cart.</p>);
+    }
     setIsModalOpen(true);
   };
 
