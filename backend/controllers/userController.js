@@ -73,7 +73,7 @@ const registerUser = async (req, res) => {
       // Checking if the user already exits
       const exists = await userModel.findOne({ where: { email: email.toLowerCase() } });
       if (exists) {
-        return res.status(400).json({ success: false, message: 'Uaer already exists' });
+        return res.status(400).json({ success: false, message: 'User already exists' });
       }
   
       // Validating email format and strong password
