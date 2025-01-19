@@ -3,7 +3,7 @@ import './Login.css';
 import { assets } from '../../assets/assets';
 import axios from 'axios';
 
-const Login = ({ setShowLogin }) => {
+const Login = ({ setShowLogin, setIsAuthenticated }) => {
   const url = 'http://localhost:4000';
   const [token, setToken] = useState('');
 
@@ -37,6 +37,7 @@ const Login = ({ setShowLogin }) => {
       if (response.data.success) {
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
+        setIsAuthenticated(true);
         setShowLogin(false);
       }
       else {
