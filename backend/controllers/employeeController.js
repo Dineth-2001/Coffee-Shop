@@ -13,36 +13,6 @@ const getEmployeeById = async (req, res) => {
   }
 };
 
-
-// Login crdentials are invalid since the password is hashed
-// Employee login
-// const loginEmployee = async (req, res) => {
-//   const { email, password } = req.body;
-//   console.log('Request body:', req.body);
-
-//   try {
-//     const employee = await employeeModel.findOne({ where: { email } });
-//     if (!employee) {
-//       return res.status(404).json({ success: false, message: 'Employee not found' });
-//     }
-
-//     // console.log("email:", email)
-//     // console.log("employeeemail:", employee.email)
-//     // console.log("password:", password)
-//     // console.log("employeepassword:", employee.password)
-    
-//     const isMatch = await bcrypt.compare(password, employee.password);
-//     if (!isMatch) {
-//       return res.status(400).json({ success: false, message: 'Invalid credentials' });
-//     }
-
-//     const token = jwt.sign({ id: employee.emp_id }, 'your_jwt_secret', { expiresIn: '1h' });
-//     res.json({ success: true, token });
-//   } catch (error) {
-//     res.status(500).json({ message: error.message });
-//   }
-// };
-
 const loginEmployee = async (req, res) => {
   const {email, password} = req.body;
   try {
