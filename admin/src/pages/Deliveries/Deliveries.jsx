@@ -110,10 +110,10 @@ const Deliveries = ({ url }) => {
         ));
         toast.success('Status updated successfully!');
       } else {
-        toast.error('Failed to update status. Please try again.');
+        toast.error('Failed to update status.');
       }
     } catch (error) {
-      toast.error('Error updating status. Please try again.');
+      toast.error('Error updating status.');
     } finally {
       setLoading(false);
     }

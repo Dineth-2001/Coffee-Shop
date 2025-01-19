@@ -31,8 +31,8 @@ const Carts = () => {
       } else {
         toast.error(response.data.message || 'No cart found.');
       }
-    } catch (err) {
-      console.error('Error fetching cart by Cart ID:', err);
+    } catch (error) {
+      console.log(error);
       toast.error('Failed to fetch cart.');
     } finally {
       setLoading(false);
@@ -58,8 +58,8 @@ const Carts = () => {
       } else {
         toast.error(response.data.message || 'No carts found for this user.');
       }
-    } catch (err) {
-      console.error('Error fetching carts by User ID:', err);
+    } catch (error) {
+      console.log(error);
       toast.error('Failed to fetch carts');
     } finally {
       setLoading(false);
@@ -73,33 +73,20 @@ const Carts = () => {
       <div className="search-container">
         <div className="search-bar">
           <h2>Search by Cart ID</h2>
-          <input
-            type="text"
-            placeholder="Enter Cart ID"
-            value={cartId}
-            onChange={(e) => setCartId(e.target.value)}
-          />
-          <button onClick={handleSearchByCartId} disabled={loading}>
-            {loading ? 'Searching...' : 'Search'}
-          </button>
+          <input type="text" placeholder="Enter Cart ID" value={cartId} onChange={(event) => setCartId(event.target.value)}/>
+          <button onClick={handleSearchByCartId} disabled={loading}>{loading ? 'Searching...' : 'Search'}</button>
         </div>
         <div className="search-bar">
           <h2>Search by User ID</h2>
-          <input
-            type="text"
-            placeholder="Enter User ID"
-            value={userId}
-            onChange={(e) => setUserId(e.target.value)}
-          />
-          <button onClick={handleSearchByUserId} disabled={loading}>
-            {loading ? 'Searching...' : 'Search'}
-          </button>
+          <input type="text" placeholder="Enter User ID" value={userId} onChange={(event) => setUserId(event.target.value)}/>
+          <button onClick={handleSearchByUserId} disabled={loading}>{loading ? 'Searching...' : 'Search'}</button>
         </div>
       </div>
+
       <div className="results-container">
         {cartDetails && (
           <div className="cart-details">
-            <h2>Cart Details</h2>
+            <h2>Cart Details</h2><br/>
             <p>
               <strong>User ID:</strong> {cartDetails.user.user_id} <br />
               <strong>Username:</strong> {cartDetails.user.user_name}
@@ -138,10 +125,10 @@ const Carts = () => {
         )}
         {userCarts.length > 0 && (
           <div className="user-carts">
-            <h2>User's Carts</h2>
+            <h2>Cart Details</h2><br/>
             <p>
               <strong>User ID:</strong> {userInfo.user_id} <br />
-              <strong>Username:</strong> {userInfo.user_name}
+              <strong>Username:</strong> {userInfo.user_name} <br/><br/>
             </p>
             {userCarts.map((cart) => (
               <div key={cart.cart_id} className="cart-section">
@@ -167,6 +154,7 @@ const Carts = () => {
                       </tr>
                     ))}
                   </tbody>
+                  <br/>
                 </table>
               </div>
             ))}
