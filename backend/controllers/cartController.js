@@ -5,15 +5,43 @@ import userModel from '../models/userModel.js';
 
 // Add a new cart
 const addCart = async (req, res) => {
+    const { user_id, items } = req.body; // items is an array of { item_id, quantity }
+
     try {
         const cart = new cartModel({
-            user_id: req.body.user_id,
-            total: req.body.total,
+            user_id: user_id,
+            total: 0, 
         });
         await cart.save();
-        res.json({success: true, message: 'Cart added successfully'})
+
+        let total = 0;
+
+        // Add items to the cart_item table and calculate the total
+        for (const item of items) {
+            const itemDetails = await itemModel.findOne({ where: { item_id: item.item_id } });
+            if (!itemDetails) {
+                return res.json({ success: false, message: `Item with ID ${item.item_id} not found` });
+            }
+            const sub_total = item.quantity * itemDetails.price;
+            total += sub_total;
+
+            const cart_item = new cart_itemModel({
+                cart_id: cart.cart_id,
+                item_id: item.item_id,
+                quantity: item.quantity,
+                sub_total: sub_total,
+            });
+            await cart_item.save();
+        }
+
+        // Update the total of the cart
+        cart.total = total;
+        await cart.save();
+
+        res.json({ success: true, message: 'Cart added successfully', cart_id: cart.cart_id });
     } catch (error) {
-        res.json({success: false, message: 'Failed to add cart'})
+        console.error('Error:', error);
+        res.json({ success: false, message: 'Failed to add cart' });
     }
 };
 

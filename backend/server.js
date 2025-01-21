@@ -1,12 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import sequelize from './config/db.js';
+import cookieParser from 'cookie-parser';
+
 import itemRouter from './routes/itemRoute.js';
 import userRouter from './routes/userRoute.js';
 import deliveryRouter from './routes/deliveryRoute.js';
 import cart_itemRouter from './routes/cart_itemRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import employeeRouter from './routes/employeeRoute.js';
+
 import 'dotenv/config';
 
 
@@ -16,7 +19,11 @@ const port = 4000;
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', 
+  credentials: true
+}));
+app.use(cookieParser());
 
 // DB connection
 sequelize.authenticate()

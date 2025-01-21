@@ -3,30 +3,6 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import validator from 'validator';
 
-// Add a new user
-// const addUser = async (req, res) => {
-//     const { user_name, email, password } = req.body;
-
-//     if (!user_name || !email || !password) {
-//         return res.status(400).json({ success: false, message: 'All fields are required' });
-//     }
-
-//     const user = new userModel({
-//         user_name,
-//         email,
-//         password
-//     });
-    
-//     try {
-//         await user.save()
-//         res.json({success: true, message: 'User added successfully'})
-//     }
-//     catch(error) {
-//         console.log(error)
-//         res.json({success: false, message: 'Failed to add user'})
-//     }
-// };
-
 // Get all users
 const getUsers = async (req, res) => {
     try {
@@ -56,6 +32,10 @@ const loginUser = async (req, res) => {
       }
   
       const token = createToken(user.user_id);
+
+      res.cookie('user_id', user.user_id, { httpOnly: true, sameSite: 'Strict' });
+      // res.cookie('token', token, { httpOnly: true, sameSite: 'Strict' });
+
       res.json({success: true, token});
     } catch (error) {
       console.log(error);
@@ -104,4 +84,14 @@ const registerUser = async (req, res) => {
     }
 }
 
-export { getUsers, loginUser, registerUser };
+const logoutUser = async (req, res) => {
+    try {
+      res.clearCookie('user_id', { httpOnly: true, sameSite: 'Strict' });
+      // res.clearCookie('token', { httpOnly: true, sameSite: 'Strict' });
+      res.json({ success: true, message: 'Logged out successfully' });
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+}
+
+export { getUsers, loginUser, registerUser, logoutUser };

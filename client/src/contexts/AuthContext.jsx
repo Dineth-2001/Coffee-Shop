@@ -31,6 +31,7 @@
 import React, { createContext, useState, useEffect } from 'react';
 import useCart from '../hooks/useCart';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export const AuthContext = createContext();
 
@@ -47,11 +48,16 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("token");
-    clearCart();
-    navigate('/');
+  const handleLogout = async () => {
+    try{
+      await axios.post('http://localhost:4000/api/user/logout', {}, { withCredentials: true });
+      setIsAuthenticated(false);
+      localStorage.removeItem("token");
+      clearCart();
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

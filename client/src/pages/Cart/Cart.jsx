@@ -200,9 +200,10 @@
 import React, { useContext, useEffect } from "react";
 import "./Cart.css";
 import { assets } from "../../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { isCookie, useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import { AuthContext } from "../../contexts/AuthContext";
+import axios from "axios";
 
 const Cart = () => {
   const { cartItems, setCartItems, clearCart } = useCart();
@@ -215,8 +216,24 @@ const Cart = () => {
   //   }
   // }, [isAuthenticated, clearCart]);
 
-  const handlePaymentClick = () => {
-    navigate('/place-order');
+  const handlePaymentClick = async () => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/cart/addCart', {
+        user_id: 1,
+        items: consolidatedCart.map(item => ({
+          item_id: item._id,
+          quantity: item.quantity
+        }))
+      });
+
+      if (response.data.success) {
+        navigate('/place-order');
+      } else {
+        console.error('Failed to create cart:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error creating cart:', error);
+    }
   };
 
   const consolidatedCart = cartItems.reduce((acc, item) => {
@@ -242,7 +259,7 @@ const Cart = () => {
   // Function to remove all instances of an item
   const removeAllItems = (itemId) => {
     const updatedCart = cartItems.filter((item) => item._id !== itemId);
-    setCartItems(updatedCart); // Remove all items with the given ID
+    setCartItems(updatedCart); 
   };
 
   const grandTotal = consolidatedCart.reduce(
