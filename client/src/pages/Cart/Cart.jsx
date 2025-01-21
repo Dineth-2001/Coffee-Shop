@@ -200,10 +200,11 @@
 import React, { useContext, useEffect } from "react";
 import "./Cart.css";
 import { assets } from "../../assets/assets";
-import { isCookie, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useCart from "../../hooks/useCart";
 import { AuthContext } from "../../contexts/AuthContext";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 const Cart = () => {
   const { cartItems, setCartItems, clearCart } = useCart();
@@ -218,8 +219,20 @@ const Cart = () => {
 
   const handlePaymentClick = async () => {
     try {
+      const token = localStorage.getItem('token');
+
+      if (!token) {
+        console.error('No token found');
+        return;
+      }
+
+      const decodedToken = jwtDecode(token);
+      const user_id = decodedToken.id;
+
+      console.log('Decoded user_id:', user_id);
+
       const response = await axios.post('http://localhost:4000/api/cart/addCart', {
-        user_id: 1,
+        user_id,
         items: consolidatedCart.map(item => ({
           item_id: item._id,
           quantity: item.quantity

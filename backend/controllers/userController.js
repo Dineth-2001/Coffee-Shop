@@ -33,7 +33,7 @@ const loginUser = async (req, res) => {
   
       const token = createToken(user.user_id);
 
-      res.cookie('user_id', user.user_id, { httpOnly: true, sameSite: 'Strict' });
+      // res.cookie('user_id', user.user_id, { httpOnly: true, sameSite: 'Strict' });
       // res.cookie('token', token, { httpOnly: true, sameSite: 'Strict' });
 
       res.json({success: true, token});
@@ -84,14 +84,14 @@ const registerUser = async (req, res) => {
     }
 }
 
-const logoutUser = async (req, res) => {
-    try {
-      res.clearCookie('user_id', { httpOnly: true, sameSite: 'Strict' });
-      // res.clearCookie('token', { httpOnly: true, sameSite: 'Strict' });
-      res.json({ success: true, message: 'Logged out successfully' });
-    } catch (error) {
-      res.status(500).json({ message: error.message });
-    }
-}
+// const logoutUser = async (req, res) => {
+//     try {
+//       res.clearCookie('user_id', { httpOnly: true, sameSite: 'Strict' });
+//       // res.clearCookie('token', { httpOnly: true, sameSite: 'Strict' });
+//       res.json({ success: true, message: 'Logged out successfully' });
+//     } catch (error) {
+//       res.status(500).json({ message: error.message });
+//     }
+// }
 
-export { getUsers, loginUser, registerUser, logoutUser };
+export { getUsers, loginUser, registerUser };
