@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   const handleLogout = async () => {
     try{
-      await axios.post('http://localhost:4000/api/user/logout', {}, { withCredentials: true });
+      // await axios.post('http://localhost:4000/api/user/logout', {}, { withCredentials: true });
       setIsAuthenticated(false);
       localStorage.removeItem("token");
       clearCart();

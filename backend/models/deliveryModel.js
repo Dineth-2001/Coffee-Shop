@@ -9,6 +9,26 @@ const delivery = sequelize.define('delivery', {
     autoIncrement: true,
     primaryKey: true,
   },
+  date_time: {
+    type: DataTypes.DATE,
+    allowNull: false,
+    defaultValue: DataTypes.NOW,
+  },
+  payment: {
+    type: Boolean,
+    defaultValue: false,
+  },
+  first_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  last_name: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {  
+    type: DataTypes.STRING,
+  },
   street: {
     type: DataTypes.STRING,
     allowNull: false,

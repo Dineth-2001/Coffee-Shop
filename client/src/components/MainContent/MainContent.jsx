@@ -39,6 +39,7 @@ import Menu from '../../pages/Menu/Menu';
 import Cart from '../../pages/Cart/Cart';
 import PlaceOrder from '../../pages/PlaceOrder/PlaceOrder';
 import Login from '../Login/Login';
+import Payment from '../../pages/Payment/Payment';
 import { AuthContext } from '../../contexts/AuthContext';
 
 const MainContent = () => {
@@ -55,6 +56,7 @@ const MainContent = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </>
   );

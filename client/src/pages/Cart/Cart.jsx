@@ -217,7 +217,7 @@ const Cart = () => {
   //   }
   // }, [isAuthenticated, clearCart]);
 
-  const handlePaymentClick = async () => {
+  const handleProceedClick = async () => {
     try {
       const token = localStorage.getItem('token');
 
@@ -229,8 +229,6 @@ const Cart = () => {
       const decodedToken = jwtDecode(token);
       const user_id = decodedToken.id;
 
-      console.log('Decoded user_id:', user_id);
-
       const response = await axios.post('http://localhost:4000/api/cart/addCart', {
         user_id,
         items: consolidatedCart.map(item => ({
@@ -240,6 +238,7 @@ const Cart = () => {
       });
 
       if (response.data.success) {
+        sessionStorage.setItem('cart_id', response.data.cart_id);
         navigate('/place-order');
       } else {
         console.error('Failed to create cart:', response.data.message);
@@ -321,7 +320,7 @@ const Cart = () => {
         </div>
       )}
       {consolidatedCart.length > 0 && (
-        <button className="place-order-button" onClick={handlePaymentClick}>Place Your Order</button>
+        <button className="place-order-button" onClick={handleProceedClick}>Place Your Order</button>
       )}
     </div>
   );

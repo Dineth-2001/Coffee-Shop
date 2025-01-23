@@ -62,17 +62,17 @@ INSERT INTO cart_item (cart_id, item_id, quantity, sub_total) VALUES
 (10, 4, 2, 14.00);
 
 -- Populate Delivery Table
-INSERT INTO delivery (cart_id, user_id, street, city, state, zip, phone_num, tot_with_delivery, status) VALUES
-(1, 1, '123 Main St', 'Metropolis', 'NY', 12345, 1234567890, 22.00, 'Completed'),
-(2, 2, '456 Elm St', 'Gotham', 'CA', 54321, 9876543210, 34.00, 'Completed'),
-(3, 3, '789 Oak St', 'Star City', 'TX', 67890, 2345678901, 16.00, 'Completed'),
-(4, 4, '101 Maple St', 'Central City', 'FL', 34567, 8765432109, 53.00, 'Completed'),
-(5, 5, '202 Pine St', 'Smallville', 'WA', 45678, 3456789012, 18.00, 'Cancelled'),
-(6, 6, '303 Cedar St', 'Coast City', 'IL', 56789, 7654321098, 13.00, 'Pending'),
-(7, 7, '404 Birch St', 'Blüdhaven', 'NV', 67891, 4567890123, 35.00, 'Pending'),
-(8, 8, '505 Walnut St', 'Fawcett City', 'OR', 78912, 6543210987, 41.00, 'Completed'),
-(9, 9, '606 Cherry St', 'Keystone City', 'CO', 89012, 5678901234, 23.00, 'Pending'),
-(10, 10, '707 Aspen St', 'Hub City', 'AZ', 90123, 8901234567, 40.00, 'Pending');
+INSERT INTO delivery (cart_id, user_id, first_name, last_name, email, street, city, state, zip, phone_num, tot_with_delivery, status) VALUES
+(1, 1, 'test1', 'test1', 'test1@email.com', '123 Main St', 'Metropolis', 'NY', 12345, 1234567890, 22.00, 'Completed'),
+(2, 2, 'test2', 'test2', 'test2@email.com', '456 Elm St', 'Gotham', 'CA', 54321, 9876543210, 34.00, 'Completed'),
+(3, 3, 'test3', 'test3', 'test3@email.com', '789 Oak St', 'Star City', 'TX', 67890, 2345678901, 16.00, 'Completed'),
+(4, 4, 'test4', 'test4', 'test4@email.com', '101 Maple St', 'Central City', 'FL', 34567, 8765432109, 53.00, 'Completed'),
+(5, 5, 'test5', 'test5', 'test5@email.com', '202 Pine St', 'Smallville', 'WA', 45678, 3456789012, 18.00, 'Cancelled'),
+(6, 6, 'test6', 'test6', 'test6@email.com', '303 Cedar St', 'Coast City', 'IL', 56789, 7654321098, 13.00, 'Pending'),
+(7, 7, 'test7', 'test7', 'test7@email.com', '404 Birch St', 'Blüdhaven', 'NV', 67891, 4567890123, 35.00, 'Pending'),
+(8, 8, 'test8', 'test8', 'test8@email.com', '505 Walnut St', 'Fawcett City', 'OR', 78912, 6543210987, 41.00, 'Completed'),
+(9, 9, 'test9', 'test9', 'test9@email.com', '606 Cherry St', 'Keystone City', 'CO', 89012, 5678901234, 23.00, 'Pending'),
+(10, 10, 'test10', 'test10', 'test10@email.com', '707 Aspen St', 'Hub City', 'AZ', 90123, 8901234567, 40.00, 'Pending');
 
 INSERT INTO employee (emp_name, password, email) VALUES
 ('Employee1', 'employee1', 'employee1@example.com'),
